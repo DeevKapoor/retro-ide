@@ -73,7 +73,7 @@ const Playground = () => {
       params: { base64_encoded: 'true', fields: '*' },
       headers: {
         'content-type': 'application/json',
-        'X-RapidAPI-Key': '79c2103237msh1ea258e5b590edfp1a3d05jsn10edae2c23b6',
+        'X-RapidAPI-Key': '79c2103237msh1ea258e5b590edfp1a3d05jsn10edae2c23b6', // Correct API Key
         'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com',
       },
       data: JSON.stringify({
@@ -94,14 +94,18 @@ const Playground = () => {
         url: `https://judge0-ce.p.rapidapi.com/submissions/${token}`,
         params: { base64_encoded: 'true', fields: '*' },
         headers: {
-          'X-RapidAPI-Key': 'your-rapidapi-key',
+          'X-RapidAPI-Key': '79c2103237msh1ea258e5b590edfp1a3d05jsn10edae2c23b6', // Correct API Key
           'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com',
         },
       };
+
       const res = await axios.request(options);
+      console.log(res.data); // Check the structure of the response
+
       if (res.data.status_id <= 2) {
-        const res2 = await getOutput(token);
-        return res2.data;
+        // Poll again after a delay (e.g., 3 seconds) if still processing
+        setTimeout(() => getOutput(token), 3000);
+        return null; // Avoid processing until the status is complete
       }
       return res.data;
     } catch (error) {
