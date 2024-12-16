@@ -20,13 +20,18 @@ This project uses React for frontend development, styled-components for UI styli
 - **React Context API**: For managing global states (e.g., ModalContext).
 - **CSS Animations**: Used for smooth transitions and animations.
 
+## Demo
+
+Click [here](https://retro-ide.vercel.app/) for demo
+
+
 ## Installation
 
 To run this project locally, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/retro-ide.git
+    git clone https://github.com/DeevKapoor/retro-ide.git
     ```
     
 2. Navigate into the project directory:
