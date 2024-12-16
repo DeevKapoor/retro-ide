@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Poppins', Neue Haas Unica;
+        font-family: 'Play', Neue Haas Unica;
     }
 
     body {
